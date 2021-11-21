@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC } from 'react';
+import { Container, Grid } from '@mui/material';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { ChartCard } from './components/ChartCard/ChartCard';
+import { MarketCapChart } from './components/Charts/MarketCapChart/MarketCapChart';
 
-export default App;
+export const App: FC = () => (
+  <Container>
+    <h1>Oi</h1>
+    {/* <DataGrid
+      getItemKey={(item) => item.title}
+      itemMinWidth="550px"
+      items={[{ title: 'Cap do mercado', Chart: MarketCapChart }]}
+      renderItem={(item) => <ChartCard {...item} />}
+    /> */}
+    <Grid container spacing={2}>
+      <Grid item xs={12}>
+        <ChartCard title="Cap do mercado" Chart={MarketCapChart} />
+      </Grid>
+    </Grid>
+  </Container>
+);
