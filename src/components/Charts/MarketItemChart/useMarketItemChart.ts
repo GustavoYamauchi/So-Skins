@@ -1,10 +1,10 @@
-import { format, getDate, getDay, getMonth, getUnixTime, getWeekOfMonth, getYear, isWithinInterval, startOfMonth, startOfWeek, sub } from 'date-fns';
+import { format, getDate, getMonth, getUnixTime, getWeekOfMonth, getYear, isWithinInterval, previousSunday, startOfMonth, startOfWeek, sub } from 'date-fns';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { httpClient } from '../../../httpClient';
 import { ChartProps, Groups, Periods } from '../../ChartCard/ChartCard';
 
-type MarketCap = {
+type MarketItem = {
   id: string;
   total: string;
   byRarity: {
@@ -18,7 +18,7 @@ type MarketCap = {
   timestamp: string;
 }
 
-type MarketCapResponse = Array<{
+type MarketItemResponse = Array<{
   id: string;
   total: string;
   byRarity: {
@@ -32,12 +32,12 @@ type MarketCapResponse = Array<{
   timestamp: string;
 }>
 
-export const useMarketCapChart = ({ groupBy, period }: ChartProps) => {
-  const [original, setOriginal] = useState<MarketCapResponse>([]);
+export const useMarketItemChart = ({ groupBy, period }: ChartProps) => {
+  const [original, setOriginal] = useState<MarketItemResponse>([]);
 
   const getData = useCallback(async () => {
     const response = await httpClient.get(
-      '/market-caps'
+      '/market-items'
     );
 
     setOriginal(response.data);
@@ -73,7 +73,7 @@ export const useMarketCapChart = ({ groupBy, period }: ChartProps) => {
       } 
     });
 
-    const grouped = filteredByPeriod.reduce<Record<string, MarketCap>>((acc, cap) => {
+    const grouped = filteredByPeriod.reduce<Record<string, MarketItem>>((acc, cap) => {
       let key: string;
       if (groupBy === Groups.DAY) {
          key = cap.timestamp;

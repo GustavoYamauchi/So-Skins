@@ -1,6 +1,8 @@
+import { format } from 'date-fns';
 import React, { FC } from 'react';
 import {
   Bar,
+  CartesianGrid,
   ComposedChart,
   Legend,
   Line,
@@ -8,13 +10,13 @@ import {
   XAxis,
   YAxis
 } from 'recharts';
-import { ChartProps } from '../../ChartCard/ChartCard';
+import { ChartProps, Groups } from '../../ChartCard/ChartCard';
 
 
-import { useMarketCapChart } from './useMarketCapChart';
+import { useMarketItemChart } from './useMarketItemChart';
 
-export const MarketCapChart: FC<ChartProps> = (props) => {
-  const { data } = useMarketCapChart(props);
+export const MarketItemChart: FC<ChartProps> = (props) => {
+  const { data } = useMarketItemChart(props);
 
   return (
     <ComposedChart
@@ -34,9 +36,6 @@ export const MarketCapChart: FC<ChartProps> = (props) => {
       />
       <YAxis
         tickFormatter={(value) => Intl.NumberFormat('pt-BR', {
-          style: 'currency',
-          currency: 'USD',
-          currencyDisplay: "symbol",
           notation: 'compact',
           compactDisplay: 'short'
         }).format(value)}
@@ -45,9 +44,7 @@ export const MarketCapChart: FC<ChartProps> = (props) => {
       />
       <Tooltip
         formatter={(value: number) => Intl.NumberFormat('pt-BR', {
-          style: 'currency',
-          currency: 'USD',
-          maximumFractionDigits: 2
+          maximumFractionDigits: 0
         }).format(value)}
       />
       <Legend iconType="square" />
