@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+
+  so-skins:
+    container_name: so-skins
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '80:80'

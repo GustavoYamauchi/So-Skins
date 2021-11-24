@@ -21,27 +21,23 @@ export const MarketCapChart: FC<ChartProps> = (props) => {
       width={1100}
       height={510}
       data={data}
-      margin={{
-        top: 32,
-        right: 32,
-        bottom: 32,
-        left: 32
-      }}
     >
       <XAxis
         dataKey="Data"
         tickMargin={6}
+        tick={{ fontSize: 14 }}
       />
       <YAxis
         tickFormatter={(value) => Intl.NumberFormat('pt-BR', {
           style: 'currency',
           currency: 'USD',
-          currencyDisplay: "symbol",
+          currencyDisplay: "narrowSymbol",
           notation: 'compact',
           compactDisplay: 'short'
         }).format(value)}
         tickMargin={6}
         tickCount={8}
+        tick={{ fontSize: 14 }}
       />
       <Tooltip
         formatter={(value: number) => Intl.NumberFormat('pt-BR', {
@@ -50,7 +46,7 @@ export const MarketCapChart: FC<ChartProps> = (props) => {
           maximumFractionDigits: 2
         }).format(value)}
       />
-      <Legend iconType="square" />
+      <Legend iconType="square" verticalAlign="top" height={36} />
       <Bar dataKey="Facas e luvas" stackId="a" fill="#FFD700" />
       <Bar dataKey="Oculto" stackId="a" fill="#eb4b4b" />
       <Bar dataKey="Secreto" stackId="a" fill="#d32ee6" />
