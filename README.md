@@ -1,4 +1,11 @@
-# Getting Started with Create React App
+# PI: Visualização de Dados
+Autores: Gustavo Yamauchi Souza Reis e Marco Antônio Barão
+
+Link do frontend:
+[Só Skins](https://gustavoyamauchi.github.io/So-Skins/```)
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
