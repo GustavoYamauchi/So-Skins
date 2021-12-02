@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/So-Skins/static/js/main.d7458357.chunk.js",
+    "main.js.map": "/So-Skins/static/js/main.d7458357.chunk.js.map",
+    "runtime-main.js": "/So-Skins/static/js/runtime-main.c1974e2a.js",
+    "runtime-main.js.map": "/So-Skins/static/js/runtime-main.c1974e2a.js.map",
+    "static/js/2.969122c3.chunk.js": "/So-Skins/static/js/2.969122c3.chunk.js",
+    "static/js/2.969122c3.chunk.js.map": "/So-Skins/static/js/2.969122c3.chunk.js.map",
+    "index.html": "/So-Skins/index.html",
+    "static/js/2.969122c3.chunk.js.LICENSE.txt": "/So-Skins/static/js/2.969122c3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c1974e2a.js",
+    "static/js/2.969122c3.chunk.js",
+    "static/js/main.d7458357.chunk.js"
+  ]
+}
