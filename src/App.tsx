@@ -10,7 +10,7 @@ export const App: FC = () => (
     <AppBar position="static">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Só skins
+          Só skins  - Gustavo Yamauchi Souza Reis e Marco Antônio Barão
         </Typography>
       </Toolbar>
     </AppBar>
